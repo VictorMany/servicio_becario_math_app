@@ -112,13 +112,50 @@
         </div>
       </q-scroll-area>
     </q-img>
-    <!--Colores-->
+    <!--Aprender a sumar-->
+    <q-dialog v-model="sumas" transition-show="rotate" transition-hide="rotate">
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <sumas-component></sumas-component>
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-blue-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--practicar sumas-->
     <q-dialog
-      v-model="sumas"
+      v-model="p_sumas"
       transition-show="rotate"
       transition-hide="rotate"
     >
-      <sumas-component></sumas-component>
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <sumas-component-questions />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-blue-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
     </q-dialog>
   </div>
 </template>
@@ -145,14 +182,8 @@ export default {
   },
   data() {
     return {
-      actions: false,
-      alphabet: false,
-      body_parts: false,
-      numbers: false,
-      fruits: false,
-      basic_phrases: false,
-      pronouns: false,
       sumas: false,
+      p_sumas: false,
       thumbStyle: {
         right: "-6px",
         borderRadius: "1px",

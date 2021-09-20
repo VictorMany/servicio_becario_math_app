@@ -3,16 +3,6 @@
     class="my-card row justify-center"
     style="background-color: rgb(0,0,0,0.0)"
   >
-    <audio id="Red"><source src="Colores/Red.mp3" /></audio>
-    <audio id="Blue"><source src="Colores/Blue.mp3" /></audio>
-    <audio id="Yellow"><source src="Colores/Yellow.mp3" /></audio>
-    <audio id="Green"><source src="Colores/Green.mp3" /></audio>
-    <audio id="Orange"><source src="Colores/Orange.mp3" /></audio>
-    <audio id="Purple"><source src="Colores/Purple.mp3" /></audio>
-    <audio id="Grey"><source src="Colores/Grey.mp3" /></audio>
-    <audio id="Pink"><source src="Colores/Pink.mp3" /></audio>
-    <audio id="White"><source src="Colores/White.mp3" /></audio>
-
     <q-img 
       style="width: 250px; height: 250px; border-radius: 50%"
       :src="imagen"
