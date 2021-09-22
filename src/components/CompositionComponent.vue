@@ -145,7 +145,7 @@
         </q-card-section>
 
         <q-separator />
-        <q-card-actions align="center" class="bg-blue-13">
+        <q-card-actions align="center" class="bg-red-13">
           <q-btn
             flat
             text-color="white"

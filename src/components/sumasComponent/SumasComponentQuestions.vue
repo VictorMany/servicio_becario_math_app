@@ -18,29 +18,81 @@
         align: center;
         font-weight: bold;
       "
-      class="bg-blue-13 text-white text-center"
+      class="bg-indigo-13 text-white text-center"
     >
       Sumas
     </h4>
 
-    <div>
-      <div class="row q-col-gutter-xs">
-        <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
-          <q-btn
-            color="green-14"
-            style="width: 100%"
-            :outline="colors[n - 1]"
-            @click="hacerPares(n)"
-            align="between"
-            class="my-content"
-          >
-            <div class="items-center" style="width: 100%">
-              {{ numbersArray[n - 1] }}
-            </div>
-          </q-btn>
+    <q-list bordered class="rounded-borders">
+      <q-expansion-item
+        expand-separator
+        icon="looks_one"
+        label="Sumas con una cifra"
+      >
+        <div class="row q-col-gutter-xs">
+          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
+            <q-btn
+              :color="color[n - 1]"
+              style="width: 100%"
+              :outline="colors[n - 1]"
+              @click="hacerPares(n, '1c')"
+              align="between"
+              class="my-content"
+            >
+              <div class="items-center" style="width: 100%">
+                {{ numbersArray[n - 1] }}
+              </div>
+            </q-btn>
+          </div>
         </div>
-      </div>
-    </div>
+      </q-expansion-item>
+
+      <q-expansion-item
+        expand-separator
+        icon="looks_two"
+        label="Sumas con dos cifras"
+      >
+        <div class="row q-col-gutter-xs">
+          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
+            <q-btn
+              :color="color[n - 1]"
+              style="width: 100%"
+              :outline="colors[n - 1]"
+              @click="hacerPares(n, '2c')"
+              align="between"
+              class="my-content"
+            >
+              <div class="items-center" style="width: 100%">
+                {{ numbersArray[n - 1] }}
+              </div>
+            </q-btn>
+          </div>
+        </div>
+      </q-expansion-item>
+
+      <q-expansion-item
+        expand-separator
+        icon="looks_3"
+        label="Sumas con tres cifras"
+      >
+        <div class="row q-col-gutter-xs">
+          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
+            <q-btn
+              :color="color[n - 1]"
+              style="width: 100%"
+              :outline="colors[n - 1]"
+              @click="hacerPares(n, '3c')"
+              align="between"
+              class="my-content"
+            >
+              <div class="items-center" style="width: 100%">
+                {{ numbersArray[n - 1] }}
+              </div>
+            </q-btn>
+          </div>
+        </div>
+      </q-expansion-item>
+    </q-list>
   </div>
 </template>
 
@@ -61,8 +113,11 @@ export default {
     return {
       showNotif() {
         $q.notify({
-          message: "Muy bien hecho",
+          message: "Felicidades, muy bien hecho !!",
           color: "green",
+          position: "center",
+          multiLine: true,
+          icon: "check",
         });
       },
     };
@@ -95,46 +150,61 @@ export default {
       //console.log(n, this.numbersAleatorios[n - 9]);
       this.numbersArray[this.numbersAleatorios[n - 9]] = result;
     },
-    hacerPares(a) {
-      this.cont++;
-      let val1, val2;
 
-      if (a <= 9) {
-        val1 = eval(this.numbersArray[a - 1]);
-        console.log(val1);
-        this.matches.push({
-          val: val1,
-          a: a,
-          string: this.numbersArray[a - 1],
-        });
-      } else {
-        val2 = eval(this.numbersArray[a - 1]);
-        this.matches.push({
-          val: val2,
-          a: a,
-          string: this.numbersArray[a - 1],
-        });
-      }
+    hacerPares(a, cifra) {
+      if (this.colors[a - 1]) {
+        this.cont++;
+        let val1, val2;
 
-      if (
-        this.matches.length == 2 &&
-        this.matches[0] &&
-        this.matches[1] &&
-        this.matches[0].val == this.matches[1].val &&
-        this.matches[0].string != this.matches[1].string
-      ) {
-        console.log(this.matches[0].val, this.matches[1].val);
-        this.colors[this.matches[0].a - 1] = false;
-        this.colors[this.matches[1].a - 1] = false;
-        this.matches = [];
-        if (!this.colors.includes(true)) {
-          console.log("yaaaaaa");
-          this.showNotif();
+        if (a <= 9) {
+          val1 = eval(this.numbersArray[a - 1]);
+          console.log(val1);
+          this.matches.push({
+            val: val1,
+            a: a,
+            string: this.numbersArray[a - 1],
+          });
+          this.color[this.matches[0].a - 1] = "orange-13";
+          this.colors[this.matches[0].a - 1] = false;
+        } else {
+          val2 = eval(this.numbersArray[a - 1]);
+          this.matches.push({
+            val: val2,
+            a: a,
+            string: this.numbersArray[a - 1],
+          });
+          this.color[this.matches[0].a - 1] = "orange-13";
+          this.colors[this.matches[0].a - 1] = false;
         }
-      } else if (this.matches.length == 2) {
-        console.log(this.matches[0].val, this.matches[1].val);
-        console.log("Unmatch");
-        this.matches = [];
+
+        if (
+          this.matches.length == 2 &&
+          this.matches[0] &&
+          this.matches[1] &&
+          this.matches[0].val == this.matches[1].val &&
+          this.matches[0].string != this.matches[1].string
+        ) {
+          console.log(this.matches[0].val, this.matches[1].val);
+          this.color[this.matches[0].a - 1] = "blue-13";
+          this.color[this.matches[1].a - 1] = "blue-13";
+          this.colors[this.matches[0].a - 1] = false;
+          this.colors[this.matches[1].a - 1] = false;
+          this.matches = [];
+
+          if (!this.colors.includes(true)) {
+            console.log("yaaaaaa");
+            this.showNotif();
+          }
+        } else if (this.matches.length == 2) {
+          console.log(this.matches[0].val, this.matches[1].val);
+          console.log("Unmatch");
+          this.color[this.matches[0].a - 1] = "blue-13";
+          this.color[this.matches[1].a - 1] = "blue-13";
+          this.colors[this.matches[0].a - 1] = true;
+          this.colors[this.matches[1].a - 1] = true;
+
+          this.matches = [];
+        }
       }
     },
 
@@ -155,8 +225,6 @@ export default {
       return this.numbersAleatorios.includes(num);
     },
   },
-
-  computed: [],
 
   data() {
     return {
@@ -184,6 +252,27 @@ export default {
         true,
         true,
       ],
+      color: [
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+      ],
+
       matches: [],
     };
   },
