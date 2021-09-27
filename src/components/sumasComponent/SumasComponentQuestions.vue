@@ -35,7 +35,7 @@
               :color="color[n - 1]"
               style="width: 100%"
               :outline="colors[n - 1]"
-              @click="hacerPares(n, '1c')"
+              @click="hacerPares(n, '')"
               align="between"
               class="my-content"
             >
@@ -55,15 +55,15 @@
         <div class="row q-col-gutter-xs">
           <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
-              :color="color[n - 1]"
+              :color="color2[n - 1]"
               style="width: 100%"
-              :outline="colors[n - 1]"
+              :outline="colors2[n - 1]"
               @click="hacerPares(n, '2c')"
               align="between"
               class="my-content"
             >
               <div class="items-center" style="width: 100%">
-                {{ numbersArray[n - 1] }}
+                {{ numbersArray2c[n - 1] }}
               </div>
             </q-btn>
           </div>
@@ -78,15 +78,15 @@
         <div class="row q-col-gutter-xs">
           <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
-              :color="color[n - 1]"
+              :color="color3[n - 1]"
               style="width: 100%"
-              :outline="colors[n - 1]"
+              :outline="colors3[n - 1]"
               @click="hacerPares(n, '3c')"
               align="between"
               class="my-content"
             >
               <div class="items-center" style="width: 100%">
-                {{ numbersArray[n - 1] }}
+                {{ numbersArray3c[n - 1] }}
               </div>
             </q-btn>
           </div>
@@ -128,83 +128,159 @@ export default {
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
           let suma =
-            this.found(i).toString() + " + " + this.found(i + 1).toString();
+            this.found(1, 9).toString() + " + " + this.found(1, 9).toString();
           this.numbersArray.push(suma);
-        } else this.numbersArray.push(this.foundResult(i));
+        } else this.numbersArray.push(this.foundResult(i, 1));
       }
 
+      for (let i = 0; i <= 17; i++) {
+        if (i < 9) {
+          let suma =
+            this.found(10, 99).toString() +
+            " + " +
+            this.found(10, 99).toString();
+          this.numbersArray2c.push(suma);
+        } else this.numbersArray2c.push(this.foundResult(i, 2));
+      }
+
+      for (let i = 0; i <= 17; i++) {
+        if (i < 9) {
+          let suma =
+            this.found(100, 999).toString() +
+            " + " +
+            this.found(100, 999).toString();
+          this.numbersArray3c.push(suma);
+        } else this.numbersArray3c.push(this.foundResult(i, 3));
+      }
       //console.log(this.numbersArray);
     },
 
-    found(n) {
-      let number = Math.floor(Math.random() * (100 - 0) + 1);
+    found(min, max) {
+      console.log(min, max);
+      let number = Math.floor(Math.random() * (max - min + 1) + min);
       return number;
     },
 
-    foundResult(n) {
-      let result = eval(this.numbersArray[n - 9]);
-      for (let i = 0; i < 9; i++) {
-        this.aleatorio();
+    foundResult(n, cifra) {
+      if (cifra == 1) {
+        let result = eval(this.numbersArray[n - 9]);
+        for (let i = 0; i < 9; i++) {
+          this.aleatorio();
+        }
+        this.numbersArray[this.numbersAleatorios[n - 9]] = result;
+      } else if (cifra == 2) {
+        let result = eval(this.numbersArray2c[n - 9]);
+        for (let i = 0; i < 9; i++) {
+          this.aleatorio();
+        }
+        this.numbersArray2c[this.numbersAleatorios[n - 9]] = result;
+      } else if (cifra == 3) {
+        let result = eval(this.numbersArray3c[n - 9]);
+        for (let i = 0; i < 9; i++) {
+          this.aleatorio();
+        }
+        this.numbersArray3c[this.numbersAleatorios[n - 9]] = result;
       }
-      // console.log(this.numbersAleatorios);
-      //console.log(n, this.numbersAleatorios[n - 9]);
-      this.numbersArray[this.numbersAleatorios[n - 9]] = result;
     },
 
     hacerPares(a, cifra) {
-      if (this.colors[a - 1]) {
+      console.log("Hola como te va", cifra);
+
+      switch (true) {
+        case cifra == "":
+          this.auxArray = this.numbersArray;
+          this.auxColor = this.color;
+          this.auxColors = this.colors;
+          this.auxMatches = this.matches;
+          break;
+        case cifra == "2c":
+          this.auxArray = this.numbersArray2c;
+          this.auxColor = this.color2;
+          this.auxColors = this.colors2;
+          this.auxMatches = this.matches2;
+          break;
+        case cifra == "3c":
+          this.auxArray = this.numbersArray3c;
+          this.auxColor = this.color3;
+          this.auxColors = this.colors3;
+          this.auxMatches = this.matches3;
+          break;
+      }
+
+      if (this.auxColors[a - 1]) {
         this.cont++;
         let val1, val2;
 
         if (a <= 9) {
-          val1 = eval(this.numbersArray[a - 1]);
+          val1 = eval(this.auxArray[a - 1]);
           console.log(val1);
-          this.matches.push({
+          this.auxMatches.push({
             val: val1,
             a: a,
-            string: this.numbersArray[a - 1],
+            string: this.auxArray[a - 1],
           });
-          this.color[this.matches[0].a - 1] = "orange-13";
-          this.colors[this.matches[0].a - 1] = false;
+          this.auxColor[this.auxMatches[0].a - 1] = "orange-13";
+          this.auxColors[this.auxMatches[0].a - 1] = false;
         } else {
-          val2 = eval(this.numbersArray[a - 1]);
-          this.matches.push({
+          val2 = eval(this.auxArray[a - 1]);
+          this.auxMatches.push({
             val: val2,
             a: a,
-            string: this.numbersArray[a - 1],
+            string: this.auxArray[a - 1],
           });
-          this.color[this.matches[0].a - 1] = "orange-13";
-          this.colors[this.matches[0].a - 1] = false;
+          this.auxColor[this.auxMatches[0].a - 1] = "orange-13";
+          this.auxColors[this.auxMatches[0].a - 1] = false;
         }
 
         if (
-          this.matches.length == 2 &&
-          this.matches[0] &&
-          this.matches[1] &&
-          this.matches[0].val == this.matches[1].val &&
-          this.matches[0].string != this.matches[1].string
+          this.auxMatches.length == 2 &&
+          this.auxMatches[0] &&
+          this.auxMatches[1] &&
+          this.auxMatches[0].val == this.auxMatches[1].val &&
+          this.auxMatches[0].string != this.auxMatches[1].string
         ) {
-          console.log(this.matches[0].val, this.matches[1].val);
-          this.color[this.matches[0].a - 1] = "blue-13";
-          this.color[this.matches[1].a - 1] = "blue-13";
-          this.colors[this.matches[0].a - 1] = false;
-          this.colors[this.matches[1].a - 1] = false;
-          this.matches = [];
+          console.log(this.auxMatches[0].val, this.auxMatches[1].val);
+          this.auxColor[this.auxMatches[0].a - 1] = "blue-13";
+          this.auxColor[this.auxMatches[1].a - 1] = "blue-13";
+          this.auxColors[this.auxMatches[0].a - 1] = false;
+          this.auxColors[this.auxMatches[1].a - 1] = false;
+          this.auxMatches = [];
 
-          if (!this.colors.includes(true)) {
+          if (!this.auxColors.includes(true)) {
             console.log("yaaaaaa");
             this.showNotif();
           }
-        } else if (this.matches.length == 2) {
-          console.log(this.matches[0].val, this.matches[1].val);
+        } else if (this.auxMatches.length == 2) {
+          console.log(this.auxMatches[0].val, this.auxMatches[1].val);
           console.log("Unmatch");
-          this.color[this.matches[0].a - 1] = "blue-13";
-          this.color[this.matches[1].a - 1] = "blue-13";
-          this.colors[this.matches[0].a - 1] = true;
-          this.colors[this.matches[1].a - 1] = true;
+          this.auxColor[this.auxMatches[0].a - 1] = "blue-13";
+          this.auxColor[this.auxMatches[1].a - 1] = "blue-13";
+          this.auxColors[this.auxMatches[0].a - 1] = true;
+          this.auxColors[this.auxMatches[1].a - 1] = true;
 
-          this.matches = [];
+          this.auxMatches = [];
         }
+      }
+
+      switch (true) {
+        case cifra == "":
+          this.numbersArray = this.auxArray;
+          this.color = this.auxColor;
+          this.colors = this.auxColors;
+          this.matches = this.auxMatches;
+          break;
+        case cifra == "2c":
+          this.numbersArray2c = this.auxArray;
+          this.color2 = this.auxColor;
+          this.colors2 = this.auxColors;
+          this.matches2 = this.auxMatches;
+          break;
+        case cifra == "3c":
+          this.numbersArray3c = this.auxArray;
+          this.color3 = this.auxColor;
+          this.colors3 = this.auxColors;
+          this.matches3 = this.auxMatches;
+          break;
       }
     },
 
@@ -229,10 +305,55 @@ export default {
   data() {
     return {
       cont: 0,
+      auxArray: [],
       numbersArray: [],
+      numbersArray2c: [],
+      numbersArray3c: [],
       numbersArrayResults: [],
+      numbersArrayResults2c: [],
+      numbersArrayResults3c: [],
       numbersAleatorios: [],
       colors: [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+      ],
+      colors2: [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+      ],
+      colors3: [
         true,
         true,
         true,
@@ -272,8 +393,54 @@ export default {
         "blue-13",
         "blue-13",
       ],
+      color2: [
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+      ],
+      color3: [
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+        "blue-13",
+      ],
 
       matches: [],
+      matches2: [],
+      matches3: [],
+
+      auxColors: [],
+      auxColor: [],
+      auxMatches: [],
     };
   },
 };
