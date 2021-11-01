@@ -157,17 +157,177 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+
+    <!--Aprender a restas-->
+    <q-dialog
+      v-model="restas"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <restas-component />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-blue-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--practicar restas-->
+    <q-dialog
+      v-model="p_restas"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <restas-component-questions />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--Aprender a multiplicar-->
+    <q-dialog
+      v-model="multiplicaciones"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <multiplicaciones-component />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-blue-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--practicar multiplicaciones-->
+    <q-dialog
+      v-model="p_multiplicaciones"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <multiplicaciones-component-questions />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--Aprender a dividir-->
+    <q-dialog
+      v-model="divisiones"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section> <divisiones-component /> </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-blue-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--practicar divisiones-->
+    <q-dialog
+      v-model="p_divisiones"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <divisiones-component-questions />
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
 <script lang="ts">
 import SumasComponentQuestions from "./sumasComponent/SumasComponentQuestions.vue";
+import RestasComponentQuestions from "./restasComponent/RestasComponentQuestions.vue";
+import MultiplicacionesComponentQuestions from "./multiplicacionesComponent/MultiplicacionesComponentQuestions.vue";
 import SumasComponent from "./sumasComponent/SumasComponent.vue";
+import RestasComponent from "./restasComponent/RestasComponent.vue";
+import DivisionesComponent from "./divisionesComponent/DivisionesComponent.vue";
+import MultiplicacionesComponent from "./multiplicacionesComponent/MultiplicacionesComponent.vue";
+import DivisionesComponentQuestions from "./divisionesComponent/DivisionesComponentQuestions.vue";
 
 export default {
   components: {
     SumasComponentQuestions,
+    RestasComponentQuestions,
+    MultiplicacionesComponentQuestions,
     SumasComponent,
+    RestasComponent,
+    MultiplicacionesComponent,
+    DivisionesComponent,
+    DivisionesComponentQuestions,
   },
   name: "CompositionComponent",
   props: {
@@ -183,7 +343,13 @@ export default {
   data() {
     return {
       sumas: false,
+      dvisiones: false,
       p_sumas: false,
+      restas: false,
+      p_restas: false,
+      multiplicaciones: false,
+      p_multiplicaciones: false,
+      p_divisiones: false,
       thumbStyle: {
         right: "-6px",
         borderRadius: "1px",

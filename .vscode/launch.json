@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "Attach to Chrome",
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}",
+            "url": "http://localhost:8080/#/"
+        }
+
+    ]
+}

@@ -20,20 +20,16 @@
       "
       class="bg-indigo-13 text-white text-center"
     >
-      Sumas
+      Division
     </h4>
 
     <q-list bordered class="rounded-borders">
-      <q-expansion-item
-        expand-separator
-        icon="looks_one"
-        label="Nivel 1"
-      >
+      <q-expansion-item expand-separator icon="looks_one" label="Nivel 1">
         <q-btn
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Divisiones"
         />
 
         <div class="row q-col-gutter-xs">
@@ -46,7 +42,7 @@
               align="between"
               class="my-content"
             >
-              <div class="row" style="width: 100%; height: 70%">
+              <div class="row" style="width: 100%; height: 80%">
                 <div class="col" style="overflow: hidden">
                   <img :src="images[n - 1]" style="height: 80px" />
                 </div>
@@ -56,19 +52,19 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 30%; border-radius: 0.5rem"
+                style="width: 100%; height: 20%; border-radius: 0.5rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
-                  class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  class="items-center"
+                  style="width: 100%; font-size: 11px"
                 >
                   ¿Quién tiene {{ numbersArray[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
-                  class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  class="items-center"
+                  style="width: 100%; font-size: 11px"
                 >
                   Yo tengo {{ numbersArray[n - 1] }}
                 </div>
@@ -78,16 +74,12 @@
         </div>
       </q-expansion-item>
 
-      <q-expansion-item
-        expand-separator
-        icon="looks_two"
-        label="Nivel 2"
-      >
+      <q-expansion-item expand-separator icon="looks_two" label="Nivel 2">
         <q-btn
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Divisiones"
         />
         <div class="row q-col-gutter-xs">
           <div class="col-6" v-for="n in 18" :key="`xs-${n}`">
@@ -131,16 +123,12 @@
         </div>
       </q-expansion-item>
 
-      <q-expansion-item
-        expand-separator
-        icon="looks_3"
-        label="Nivel 3"
-      >
+      <q-expansion-item expand-separator icon="looks_3" label="Nivel 3">
         <q-btn
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Divisiones"
         />
 
         <div class="row q-col-gutter-xs">
@@ -236,27 +224,29 @@ export default {
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
-            this.found(1, 9).toString() + " + " + this.found(1, 9).toString();
-          this.numbersArray.push(suma);
+          let division =
+            this.found(1, 9).toString() + " / " + this.found(1, 9).toString();
+          this.numbersArray.push(division);
         } else this.numbersArray.push(this.foundResult(i, 1));
       }
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
-            this.found(10, 99).toString() + " + " + this.found(1, 9).toString();
-          this.numbersArray2c.push(suma);
+          let division =
+            this.found(10, 99).toString() +
+            " / " +
+            this.found(1, 10).toString();
+          this.numbersArray2c.push(division);
         } else this.numbersArray2c.push(this.foundResult(i, 2));
       }
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
+          let division =
             this.found(100, 999).toString() +
-            " + " +
-            this.found(1, 9).toString();
-          this.numbersArray3c.push(suma);
+            " / " +
+            this.found(1, 10).toString();
+          this.numbersArray3c.push(division);
         } else this.numbersArray3c.push(this.foundResult(i, 3));
       }
       //console.log(this.numbersArray);
@@ -423,8 +413,6 @@ export default {
     },
 
     hacerPares(a, cifra) {
-      console.log("Hola como te va", cifra);
-
       switch (true) {
         case cifra == "":
           this.auxArray = this.numbersArray;
@@ -481,10 +469,10 @@ export default {
           this.auxMatches[1] &&
           this.auxMatches[0].val == this.auxMatches[1].val &&
           this.auxMatches[0].string != this.auxMatches[1].string &&
-          ((this.auxMatches[0].string.includes("+") &&
-            !this.auxMatches[1].string.includes("+")) ||
-            (!this.auxMatches[0].string.includes("+") &&
-              this.auxMatches[1].string.includes("+")))
+          ((this.auxMatches[0].string.includes("/") &&
+            !this.auxMatches[1].string.includes("/")) ||
+            (!this.auxMatches[0].string.includes("/") &&
+              this.auxMatches[1].string.includes("/")))
         ) {
           console.log(this.auxMatches[0].val, this.auxMatches[1].val);
           this.auxColor[this.auxMatches[0].a - 1] = "green-14";
@@ -682,6 +670,7 @@ export default {
         "green-14",
         "green-14",
       ],
+
       images: [
         "img/img-sumas/1.png",
         "img/img-sumas/2.png",
@@ -702,6 +691,7 @@ export default {
         "img/img-sumas/17.png",
         "img/img-sumas/18.png",
       ],
+
       matches: [],
       matches2: [],
       matches3: [],
@@ -728,7 +718,7 @@ div
 
 .my-content
   padding: 10px 15px
-  height: 140px
+  height: 130px
   border: 1px solid rgba(86,61,124,.2)
 
 .my-content:hover

@@ -20,7 +20,7 @@
       "
       class="bg-blue-13 text-white text-center"
     >
-      Sumas
+      Multiplicaciones
     </h4>
 
     <div>
@@ -33,44 +33,67 @@
           <div class="img">
             <q-video
               :ratio="16 / 9"
-              src="https://www.youtube.com/embed/oexd_Dfic_Q"
+              src="https://www.youtube.com/embed/YFtEaVw5k1A"
             />
+
+            <!--https://www.youtube.com/embed/YFtEaVw5k1A-->
+            <!--https://www.youtube.com/embed/iA0fP4tL67s-->
           </div>
         </q-expansion-item>
 
         <q-expansion-item
           expand-separator
           icon="image"
-          label="Sumar con dedos de la mano"
+          label="Multiplicaciones con animales"
         >
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/s_dedos.jpeg"></q-img>
+              <q-img class="img" src="img/img-restas/3.png"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/0.png"></q-img>
+              <q-img class="img" src="img/img-restas/3-2.png"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/1.png"></q-img>
+              <q-img class="img" src="img/img-restas/5.png"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/2.png"></q-img>
+              <q-img class="img" src="img/img-restas/5-4.png"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/3.png"></q-img>
+              <q-img class="img" src="img/img-restas/3b.png"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/4.png"></q-img>
+              <q-img class="img" src="img/img-restas/3-3.png"></q-img>
+            </q-card-section>
+          </q-card>
+          <q-card>
+            <q-card-section>
+              <q-img class="img" src="img/img-restas/4.png"></q-img>
+            </q-card-section>
+          </q-card>
+          <q-card>
+            <q-card-section>
+              <q-img class="img" src="img/img-restas/4-1.png"></q-img>
+            </q-card-section>
+          </q-card>
+          <q-card>
+            <q-card-section>
+              <q-img class="img" src="img/img-restas/restas.png"></q-img>
+            </q-card-section>
+          </q-card>
+          <q-card>
+            <q-card-section>
+              <q-img class="img" src="img/img-restas/restas2.png"></q-img>
             </q-card-section>
           </q-card>
         </q-expansion-item>
@@ -80,9 +103,7 @@
           icon="scatter_plot"
           label="Infografía"
         >
-        
-            <q-img class="img" src="img/info.png"></q-img>
-          
+          <q-img class="img" src="img/img-restas/info.png"></q-img>
         </q-expansion-item>
       </q-list>
     </div>
@@ -90,8 +111,7 @@
 </template>
 
 <script>
-
-
+export default {};
 
 //etiquetaAudio.play();
 </script>

@@ -20,7 +20,7 @@
       "
       class="bg-indigo-13 text-white text-center"
     >
-      Sumas
+      Restas
     </h4>
 
     <q-list bordered class="rounded-borders">
@@ -33,7 +33,7 @@
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Restas"
         />
 
         <div class="row q-col-gutter-xs">
@@ -87,10 +87,10 @@
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Restas"
         />
         <div class="row q-col-gutter-xs">
-          <div class="col-6" v-for="n in 18" :key="`xs-${n}`">
+          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
               :color="color2[n - 1]"
               style="width: 100%"
@@ -140,11 +140,11 @@
           color="orange"
           style="width: 100%; margin-top: 1rem; margin-bottom: 1rem"
           @click="functions()"
-          label="Generar nuevas sumas"
+          label="Generar nuevas Restas"
         />
 
         <div class="row q-col-gutter-xs">
-          <div class="col-6" v-for="n in 18" :key="`xs-${n}`">
+          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
               :color="color3[n - 1]"
               style="width: 100%"
@@ -236,27 +236,29 @@ export default {
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
-            this.found(1, 9).toString() + " + " + this.found(1, 9).toString();
-          this.numbersArray.push(suma);
+          let resta =
+            this.found(1, 9).toString() + " - " + this.found(1, 9).toString();
+          this.numbersArray.push(resta);
         } else this.numbersArray.push(this.foundResult(i, 1));
       }
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
-            this.found(10, 99).toString() + " + " + this.found(1, 9).toString();
-          this.numbersArray2c.push(suma);
+          let resta =
+            this.found(10, 99).toString() +
+            " - " +
+            this.found(10, 99).toString();
+          this.numbersArray2c.push(resta);
         } else this.numbersArray2c.push(this.foundResult(i, 2));
       }
 
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
-          let suma =
+          let resta =
             this.found(100, 999).toString() +
-            " + " +
-            this.found(1, 9).toString();
-          this.numbersArray3c.push(suma);
+            " - " +
+            this.found(100, 999).toString();
+          this.numbersArray3c.push(resta);
         } else this.numbersArray3c.push(this.foundResult(i, 3));
       }
       //console.log(this.numbersArray);
@@ -481,10 +483,10 @@ export default {
           this.auxMatches[1] &&
           this.auxMatches[0].val == this.auxMatches[1].val &&
           this.auxMatches[0].string != this.auxMatches[1].string &&
-          ((this.auxMatches[0].string.includes("+") &&
-            !this.auxMatches[1].string.includes("+")) ||
-            (!this.auxMatches[0].string.includes("+") &&
-              this.auxMatches[1].string.includes("+")))
+          ((this.auxMatches[0].string.includes("-") &&
+            !this.auxMatches[1].string[0].includes("-")) ||
+            (!this.auxMatches[0].string[0].includes("-") &&
+              this.auxMatches[1].string.includes("-")))
         ) {
           console.log(this.auxMatches[0].val, this.auxMatches[1].val);
           this.auxColor[this.auxMatches[0].a - 1] = "green-14";
@@ -682,6 +684,7 @@ export default {
         "green-14",
         "green-14",
       ],
+
       images: [
         "img/img-sumas/1.png",
         "img/img-sumas/2.png",
@@ -702,6 +705,7 @@ export default {
         "img/img-sumas/17.png",
         "img/img-sumas/18.png",
       ],
+
       matches: [],
       matches2: [],
       matches3: [],
