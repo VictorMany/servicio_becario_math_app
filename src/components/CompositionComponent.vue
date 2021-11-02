@@ -1,5 +1,5 @@
 <template>
-  <div  style="width: 100%;">
+  <div class="bg-dark" style="width: 100%;">
     <q-img
       basic
       class="img-class"
