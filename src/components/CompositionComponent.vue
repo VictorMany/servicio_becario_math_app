@@ -343,13 +343,13 @@ export default {
   data() {
     return {
       sumas: false,
-      dvisiones: false,
-      p_sumas: false,
+      divisiones: false,
       restas: false,
-      p_restas: false,
       multiplicaciones: false,
       p_multiplicaciones: false,
       p_divisiones: false,
+      p_restas: false,
+      p_sumas: false,
       thumbStyle: {
         right: "-6px",
         borderRadius: "1px",

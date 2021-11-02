@@ -17,6 +17,7 @@
         border-radius: 0.5rem;
         align: center;
         font-weight: bold;
+        min-width: 230px;
       "
       class="bg-blue-13 text-white text-center"
     >
@@ -44,58 +45,54 @@
         <q-expansion-item
           expand-separator
           icon="image"
-          label="Multiplicaciones con animales"
+          label="Tablas de multiplicar"
         >
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/3.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t1.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/3-2.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t2.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/5.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t3.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/5-4.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t4.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/3b.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t5.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/3-3.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t6.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/4.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t7.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/4-1.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t8.jpeg"></q-img>
             </q-card-section>
           </q-card>
           <q-card>
             <q-card-section>
-              <q-img class="img" src="img/img-restas/restas.png"></q-img>
+              <q-img class="img" src="img/img-sumas/t9.jpeg"></q-img>
             </q-card-section>
           </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/restas2.png"></q-img>
-            </q-card-section>
-          </q-card>
+          
         </q-expansion-item>
 
         <q-expansion-item
@@ -103,7 +100,8 @@
           icon="scatter_plot"
           label="Infografía"
         >
-          <q-img class="img" src="img/img-restas/info.png"></q-img>
+          <q-img class="img" src="img/img-sumas/info2.jpeg"></q-img>
+          <q-img class="img" src="img/img-sumas/info.jpeg"></q-img>
         </q-expansion-item>
       </q-list>
     </div>

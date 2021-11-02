@@ -13,6 +13,7 @@
         margin-top: -0.3rem;
         margin-bottom: 2rem;
         width: 100%;
+        min-width: 230px;
         padding: 0.4rem;
         border-radius: 0.5rem;
         align: center;
@@ -20,7 +21,7 @@
       "
       class="bg-indigo-13 text-white text-center"
     >
-      Division
+      Divisiones
     </h4>
 
     <q-list bordered class="rounded-borders">
@@ -42,7 +43,7 @@
               align="between"
               class="my-content"
             >
-              <div class="row" style="width: 100%; height: 80%">
+              <div class="row" style="width: 100%; height: 70%">
                 <div class="col" style="overflow: hidden">
                   <img :src="images[n - 1]" style="height: 80px" />
                 </div>
@@ -52,19 +53,19 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 20%; border-radius: 0.5rem"
+                style="width: 100%; height: 30%; border-radius: 0.5rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
-                  class="items-center"
-                  style="width: 100%; font-size: 11px"
+                  class="items-center row justify-center text-capitalize"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   ¿Quién tiene {{ numbersArray[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
-                  class="items-center"
-                  style="width: 100%; font-size: 11px"
+                  class="items-center row justify-center text-capitalize"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray[n - 1] }}
                 </div>
@@ -106,14 +107,14 @@
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   ¿Quién tiene {{ numbersArray2c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray2c[n - 1] }}
                 </div>
@@ -156,14 +157,14 @@
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   ¿Quién tiene {{ numbersArray3c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray3c[n - 1] }}
                 </div>
@@ -225,7 +226,7 @@ export default {
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
           let division =
-            this.found(1, 9).toString() + " / " + this.found(1, 9).toString();
+            this.found(6, 12).toString() + " / " + this.found(1, 6).toString();
           this.numbersArray.push(division);
         } else this.numbersArray.push(this.foundResult(i, 1));
       }
@@ -233,7 +234,7 @@ export default {
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
           let division =
-            this.found(10, 99).toString() +
+            this.found(11, 99).toString() +
             " / " +
             this.found(1, 10).toString();
           this.numbersArray2c.push(division);
@@ -387,7 +388,8 @@ export default {
     found(min, max) {
       console.log(min, max);
       let number = Math.floor(Math.random() * (max - min + 1) + min);
-      return number;
+      if (number % 2 == 0) return number;
+      else return number + 1;
     },
 
     foundResult(n, cifra) {
@@ -396,19 +398,19 @@ export default {
         for (let i = 0; i < 9; i++) {
           this.aleatorio();
         }
-        this.numbersArray[this.numbersAleatorios[n - 9]] = result;
+        this.numbersArray[this.numbersAleatorios[n - 9]] = result.toFixed(2);
       } else if (cifra == 2) {
         let result = eval(this.numbersArray2c[n - 9]);
         for (let i = 0; i < 9; i++) {
           this.aleatorio();
         }
-        this.numbersArray2c[this.numbersAleatorios[n - 9]] = result;
+        this.numbersArray2c[this.numbersAleatorios[n - 9]] = result.toFixed(2);
       } else if (cifra == 3) {
         let result = eval(this.numbersArray3c[n - 9]);
         for (let i = 0; i < 9; i++) {
           this.aleatorio();
         }
-        this.numbersArray3c[this.numbersAleatorios[n - 9]] = result;
+        this.numbersArray3c[this.numbersAleatorios[n - 9]] = result.toFixed(2);
       }
     },
 
@@ -442,7 +444,7 @@ export default {
           val1 = eval(this.auxArray[a - 1]);
           console.log(val1);
           this.auxMatches.push({
-            val: val1,
+            val: val1.toFixed(2),
             a: a,
             string: this.auxArray[a - 1].toString(),
           });
@@ -451,7 +453,7 @@ export default {
         } else {
           val2 = eval(this.auxArray[a - 1]);
           this.auxMatches.push({
-            val: val2,
+            val: val2.toFixed(2),
             a: a,
             string: this.auxArray[a - 1].toString(),
           });
@@ -535,6 +537,7 @@ export default {
     },
 
     repetido(num) {
+      //if (num % 2 != 0)
       return this.numbersAleatorios.includes(num);
     },
   },

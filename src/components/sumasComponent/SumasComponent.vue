@@ -17,6 +17,7 @@
         border-radius: 0.5rem;
         align: center;
         font-weight: bold;
+        min-width: 230px;
       "
       class="bg-blue-13 text-white text-center"
     >
@@ -80,9 +81,7 @@
           icon="scatter_plot"
           label="Infografía"
         >
-        
-            <q-img class="img" src="img/info.png"></q-img>
-          
+          <q-img class="img" src="img/info.png"></q-img>
         </q-expansion-item>
       </q-list>
     </div>
@@ -90,9 +89,6 @@
 </template>
 
 <script>
-
-
-
 //etiquetaAudio.play();
 </script>
 

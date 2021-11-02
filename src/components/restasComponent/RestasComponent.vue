@@ -17,6 +17,8 @@
         border-radius: 0.5rem;
         align: center;
         font-weight: bold;
+        min-width: 230px;
+
       "
       class="bg-blue-13 text-white text-center"
     >

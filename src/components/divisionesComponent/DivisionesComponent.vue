@@ -17,6 +17,7 @@
         border-radius: 0.5rem;
         align: center;
         font-weight: bold;
+        min-width: 230px;
       "
       class="bg-blue-13 text-white text-center"
     >
@@ -33,19 +34,13 @@
           <div class="img">
             <q-video
               :ratio="16 / 9"
-              src="https://www.youtube.com/embed/YFtEaVw5k1A"
+              src="https://www.youtube.com/embed/iA0fP4tL67s"
             />
 
-            <!--https://www.youtube.com/embed/YFtEaVw5k1A-->
-            <!--https://www.youtube.com/embed/iA0fP4tL67s-->
           </div>
         </q-expansion-item>
 
-        <q-expansion-item
-          expand-separator
-          icon="image"
-          label="Divisiones"
-        >
+        <q-expansion-item expand-separator icon="image" label="Divisiones">
           <q-card>
             <q-card-section>
               <q-img class="img" src="img/img-restas/3.png"></q-img>

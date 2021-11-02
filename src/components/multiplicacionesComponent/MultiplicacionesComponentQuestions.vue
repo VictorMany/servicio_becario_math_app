@@ -17,6 +17,7 @@
         border-radius: 0.5rem;
         align: center;
         font-weight: bold;
+        min-width: 230px;
       "
       class="bg-indigo-13 text-white text-center"
     >
@@ -42,7 +43,7 @@
               align="between"
               class="my-content"
             >
-              <div class="row" style="width: 100%; height: 80%">
+              <div class="row" style="width: 100%; height: 70%">
                 <div class="col" style="overflow: hidden">
                   <img :src="images[n - 1]" style="height: 80px" />
                 </div>
@@ -52,19 +53,19 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 20%; border-radius: 0.5rem"
+                style="width: 100%; height: 30%; border-radius: 0.5rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
-                  class="items-center"
-                  style="width: 100%; font-size: 11px"
+                  class="items-center row justify-center text-capitalize"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   ¿Quién tiene {{ numbersArray[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
-                  class="items-center"
-                  style="width: 100%; font-size: 11px"
+                  class="items-center row justify-center text-capitalize"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray[n - 1] }}
                 </div>
@@ -106,14 +107,14 @@
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   ¿Quién tiene {{ numbersArray2c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray2c[n - 1] }}
                 </div>
@@ -156,14 +157,19 @@
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="
+                    width: 100%;
+                    font-size: 10px;
+                    overflow: scroll;
+                    overflow: scroll;
+                  "
                 >
                   ¿Quién tiene {{ numbersArray3c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px"
+                  style="width: 100%; font-size: 10px; overflow: scroll"
                 >
                   Yo tengo {{ numbersArray3c[n - 1] }}
                 </div>
@@ -233,7 +239,7 @@ export default {
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
           let multiplicacion =
-            this.found(10, 99).toString() +
+            this.found(10, 30).toString() +
             " * " +
             this.found(1, 10).toString();
           this.numbersArray2c.push(multiplicacion);
@@ -243,7 +249,7 @@ export default {
       for (let i = 0; i <= 17; i++) {
         if (i < 9) {
           let multiplicacion =
-            this.found(100, 999).toString() +
+            this.found(100, 200).toString() +
             " * " +
             this.found(1, 10).toString();
           this.numbersArray3c.push(multiplicacion);
