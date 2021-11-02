@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark" style="width: 100%">
+  <div  style="width: 100%;">
     <q-img
       basic
       class="img-class"
@@ -12,7 +12,7 @@
         :bar-style="barStyle"
         class="qScrollStyle"
       >
-        <div class="row" style="width: 100%; height; 100%;">
+        <div class="row" style="width: 100%; height; 100%; max-width: 500px">
           <div class="col-6" style="padding: 0.5rem">
             <!--Sumas-->
             <div

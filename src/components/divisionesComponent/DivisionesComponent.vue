@@ -40,65 +40,13 @@
           </div>
         </q-expansion-item>
 
-        <q-expansion-item expand-separator icon="image" label="Divisiones">
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/3.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/3-2.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/5.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/5-4.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/3b.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/3-3.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/4.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/4-1.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/restas.png"></q-img>
-            </q-card-section>
-          </q-card>
-          <q-card>
-            <q-card-section>
-              <q-img class="img" src="img/img-restas/restas2.png"></q-img>
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-
         <q-expansion-item
           expand-separator
           icon="scatter_plot"
           label="Infografía"
         >
-          <q-img class="img" src="img/img-restas/info.png"></q-img>
+          <q-img class="img" src="img/img-divisiones/info2.jpeg"></q-img>
+          <q-img class="img" src="img/img-divisiones/info.jpeg"></q-img>
         </q-expansion-item>
       </q-list>
     </div>

@@ -100,7 +100,7 @@
           icon="scatter_plot"
           label="Infografía"
         >
-          <q-img class="img" src="img/img-sumas/info2.jpeg"></q-img>
+          <q-img class="img" src="img/img-sumas/info2.png"></q-img>
           <q-img class="img" src="img/img-sumas/info.jpeg"></q-img>
         </q-expansion-item>
       </q-list>

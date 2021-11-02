@@ -91,7 +91,7 @@
           label="Generar nuevas Restas"
         />
         <div class="row q-col-gutter-xs">
-          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
+          <div class="col-6" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
               :color="color2[n - 1]"
               style="width: 100%"
@@ -145,7 +145,7 @@
         />
 
         <div class="row q-col-gutter-xs">
-          <div class="col-4" v-for="n in 18" :key="`xs-${n}`">
+          <div class="col-6" v-for="n in 18" :key="`xs-${n}`">
             <q-btn
               :color="color3[n - 1]"
               style="width: 100%"
