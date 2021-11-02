@@ -53,19 +53,22 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 30%; border-radius: 0.5rem"
+                style="width: 100%; height: 30%; border-radius: 0.5rem;
+                  margin-top: -0.9rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   ¿Quién tiene {{ numbersArray[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   Yo tengo {{ numbersArray[n - 1] }}
                 </div>
@@ -102,19 +105,22 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 30%; border-radius: 0.5rem"
+                style="width: 100%; height: 30%; border-radius: 0.5rem;
+                  margin-top: -0.9rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   ¿Quién tiene {{ numbersArray2c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   Yo tengo {{ numbersArray2c[n - 1] }}
                 </div>
@@ -152,19 +158,22 @@
                   'row',
                   n >= 1 && n <= 9 ? 'bg-deep-orange' : 'bg-indigo-10',
                 ]"
-                style="width: 100%; height: 30%; border-radius: 0.5rem"
+                style="width: 100%; height: 30%; border-radius: 0.5rem;
+                  margin-top: -0.9rem"
               >
                 <div
                   v-show="n >= 1 && n <= 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   ¿Quién tiene {{ numbersArray3c[n - 1] }} ?
                 </div>
                 <div
                   v-show="n > 9"
                   class="items-center row justify-center text-capitalize"
-                  style="width: 100%; font-size: 10px; overflow: scroll"
+                  style="width: 100%; font-size: 10px; overflow: scroll;
+                    padding-top: 0.3rem;"
                 >
                   Yo tengo {{ numbersArray3c[n - 1] }}
                 </div>
