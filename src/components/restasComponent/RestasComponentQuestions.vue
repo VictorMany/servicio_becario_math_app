@@ -257,7 +257,7 @@ export default {
           let resta =
             this.found(10, 99).toString() +
             " - " +
-            this.found(10, 99).toString();
+            this.found(1, 20).toString();
           this.numbersArray2c.push(resta);
         } else this.numbersArray2c.push(this.foundResult(i, 2));
       }
@@ -267,7 +267,7 @@ export default {
           let resta =
             this.found(100, 999).toString() +
             " - " +
-            this.found(100, 999).toString();
+            this.found(1, 20).toString();
           this.numbersArray3c.push(resta);
         } else this.numbersArray3c.push(this.foundResult(i, 3));
       }
