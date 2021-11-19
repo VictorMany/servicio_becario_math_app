@@ -33,7 +33,7 @@
         >
           <div class="row" style="width: 100%; height: 100%">
             <div class="col-4 bg-white" style="height: 100%">
-              <q-img :src="images[n - 1]" style="width: 100%; height: 100%" />
+              <q-img :src="images[n - 1]" style="width: 100%" />
             </div>
 
             <div class="col" style="width: 100%; border-radius: 0.5rem">
