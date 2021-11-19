@@ -1,12 +1,6 @@
 <template>
-  <div class="bg-dark" style="width: 100%;">
-    <q-img
-      basic
-      class="img-class"
-      style="min-width: 313px"
-      src="img/fondo.jpg"
-      height="100%"
-    >
+  <div class="bg-dark" style="width: 100%; height: 100%">
+    <q-img basic style="min-width: 313px" src="img/fondo.jpg" fit="cover">
       <q-scroll-area
         :thumb-style="thumbStyle"
         :bar-style="barStyle"
@@ -49,7 +43,7 @@
                 <q-img
                   basic
                   src="img/main_cards/multiplicacion.png"
-                  style="width: 80%; height: 80%; margin-top: 1rem"
+                  style="width: 80%; height: 80%"
                 />
               </div>
             </div>
@@ -62,8 +56,18 @@
                 <q-img
                   basic
                   src="img/main_cards/division.png"
-                  style="width: 80%; height: 80%; margin-top: 1rem"
+                  style="width: 80%; height: 80%"
                 />
+              </div>
+            </div>
+            <!--Geometria-->
+            <div
+              class="div-menu_dos inset-shadow-down bg-blue-14"
+              @click="geometria = true"
+            >
+              <div class="column items-center">
+                <h6>Figuras</h6>
+                <p>Geométricas</p>
               </div>
             </div>
           </div>
@@ -107,6 +111,26 @@
                 <h6>Practicar</h6>
                 <p>Divisiones</p>
               </div>
+            </div>
+            <!--Volumen-->
+            <div
+              class="div-menu_dos inset-shadow-down bg-blue-14"
+              @click="volumen = true"
+            >
+              <div class="column items-center">
+                <h6>Aprender</h6>
+                <p>Volumenes</p>
+              </div>
+            </div>
+          </div>
+          <!--Preguntas aleatorias-->
+          <div
+            class="div-menu_dos inset-shadow-down bg-green-14"
+            @click="preguntas = true"
+          >
+            <div class="column items-center">
+              <h6>Preguntas</h6>
+              <p>aleatorias</p>
             </div>
           </div>
         </div>
@@ -305,6 +329,81 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+
+    <!--Aprender geometria-->
+    <q-dialog
+      v-model="geometria"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <geometria-component></geometria-component>
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--Aprender volumenes-->
+    <q-dialog
+      v-model="volumen"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+          <volumen-component></volumen-component>
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!--Practicar preguntas aleatorias-->
+    <q-dialog
+      v-model="preguntas"
+      transition-show="rotate"
+      transition-hide="rotate"
+    >
+      <q-card style="background-color: #25252500; overflow: scroll">
+        <q-card-section>
+         <Preguntas/>
+        </q-card-section>
+
+        <q-separator />
+        <q-card-actions align="center" class="bg-red-13">
+          <q-btn
+            flat
+            text-color="white"
+            style="width: 100%; height: 100%"
+            outline
+            label="Cerrar"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -313,10 +412,13 @@ import SumasComponentQuestions from "./sumasComponent/SumasComponentQuestions.vu
 import RestasComponentQuestions from "./restasComponent/RestasComponentQuestions.vue";
 import MultiplicacionesComponentQuestions from "./multiplicacionesComponent/MultiplicacionesComponentQuestions.vue";
 import SumasComponent from "./sumasComponent/SumasComponent.vue";
+import GeometriaComponent from "./geometriaComponents/GeometriaComponent.vue";
+import VolumenComponent from "./volumenComponent/VolumenComponent.vue";
 import RestasComponent from "./restasComponent/RestasComponent.vue";
 import DivisionesComponent from "./divisionesComponent/DivisionesComponent.vue";
 import MultiplicacionesComponent from "./multiplicacionesComponent/MultiplicacionesComponent.vue";
 import DivisionesComponentQuestions from "./divisionesComponent/DivisionesComponentQuestions.vue";
+import Preguntas from "./preguntasAleatorias/PreguntasComponent.vue";
 
 export default {
   components: {
@@ -328,6 +430,9 @@ export default {
     MultiplicacionesComponent,
     DivisionesComponent,
     DivisionesComponentQuestions,
+    GeometriaComponent,
+    VolumenComponent,
+    Preguntas,
   },
   name: "CompositionComponent",
   props: {
@@ -343,9 +448,12 @@ export default {
   data() {
     return {
       sumas: false,
+      preguntas: false,
       divisiones: false,
       restas: false,
       multiplicaciones: false,
+      geometria: false,
+      volumen: false,
       p_multiplicaciones: false,
       p_divisiones: false,
       p_restas: false,
@@ -401,10 +509,6 @@ h6
 .qScrollStyle
   height: calc(100%)
   width: 100%
-
-.img-class
-  height: 200%
-  object-fit: cover
 
 div
   overflow: hidden
