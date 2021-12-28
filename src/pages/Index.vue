@@ -1,7 +1,7 @@
 <template>
-   <q-page style="background-color: #1575A1;"  class="row items-center justify-center">
+   <q-page style="background-color: #969EA1;"  class="row items-center justify-center">
     <example-component
-      title="Example component"
+      title="Math App"
       active
     ></example-component>
   </q-page>

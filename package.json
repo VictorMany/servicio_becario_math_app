@@ -2,7 +2,7 @@
   "name": "math",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "productName": "Math App",
   "author": "Víctor Manuel Velázquez Fuentes <victor.velazfuentez@gmail.com>",
   "private": true,
   "scripts": {

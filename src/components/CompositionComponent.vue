@@ -1,141 +1,142 @@
 <template>
-  <div class="bg-dark" style="width: 100%; height: 100%">
-    <q-img basic style="min-width: 313px" src="img/fondo.jpg" fit="cover">
-      <q-scroll-area
-        :thumb-style="thumbStyle"
-        :bar-style="barStyle"
-        class="qScrollStyle"
-      >
-        <div class="row" style="width: 100%; height; 100%; max-width: 500px">
-          <div class="col-6" style="padding: 0.5rem">
-            <!--Sumas-->
-            <div
-              class="div-menu inset-shadow-down bg-blue-14"
-              @click="sumas = true"
-            >
-              <div class="column items-center">
-                <q-img
-                  basic
-                  src="img/main_cards/suma.png"
-                  style="width: 80%; height: 80%; margin-top: 1rem"
-                />
-              </div>
-            </div>
-            <!--Restas-->
-            <div
-              class="div-menu inset-shadow-down bg-blue-6"
-              @click="restas = true"
-            >
-              <div class="column items-center">
-                <q-img
-                  basic
-                  src="img/main_cards/menos.png"
-                  style="width: 80%; height: 80%; margin-top: 1rem"
-                />
-              </div>
-            </div>
-            <!--Multiplicaciones-->
-            <div
-              class="div-menu inset-shadow-down bg-light-blue"
-              @click="multiplicaciones = true"
-            >
-              <div class="column items-center" style="overflow: scroll">
-                <q-img
-                  basic
-                  src="img/main_cards/multiplicacion.png"
-                  style="width: 80%; height: 80%"
-                />
-              </div>
-            </div>
-            <!--Divisiones-->
-            <div
-              class="div-menu inset-shadow-down bg-cyan-13"
-              @click="divisiones = true"
-            >
-              <div class="column items-center">
-                <q-img
-                  basic
-                  src="img/main_cards/division.png"
-                  style="width: 80%; height: 80%"
-                />
-              </div>
-            </div>
-            <!--Geometria-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-blue-14"
-              @click="geometria = true"
-            >
-              <div class="column items-center">
-                <h6>Figuras</h6>
-                <p>Geométricas</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6" style="padding: 0.5rem">
-            <!--Sumas-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-cyan-13"
-              @click="p_sumas = true"
-            >
-              <div class="column items-center">
-                <h6>Practicar</h6>
-                <p>Sumas</p>
-              </div>
-            </div>
-            <!--Restas-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-light-blue"
-              @click="p_restas = true"
-            >
-              <div class="column items-center">
-                <h6>Practicar</h6>
-                <p>Restas</p>
-              </div>
-            </div>
-            <!--Multiplicaciones-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-blue-6"
-              @click="p_multiplicaciones = true"
-            >
-              <div class="column items-center">
-                <h6>Practicar</h6>
-                <p>Multiplicaciones</p>
-              </div>
-            </div>
-            <!--Divisiones-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-blue-14"
-              @click="p_divisiones = true"
-            >
-              <div class="column items-center">
-                <h6>Practicar</h6>
-                <p>Divisiones</p>
-              </div>
-            </div>
-            <!--Volumen-->
-            <div
-              class="div-menu_dos inset-shadow-down bg-blue-14"
-              @click="volumen = true"
-            >
-              <div class="column items-center">
-                <h6>Aprender</h6>
-                <p>Volumenes</p>
-              </div>
-            </div>
-          </div>
-          <!--Preguntas aleatorias-->
-          <div
-            class="div-menu_dos inset-shadow-down bg-green-14"
-            @click="preguntas = true"
-          >
-            <div class="column items-center">
-              <h6>Preguntas</h6>
-              <p>aleatorias</p>
-            </div>
+  <div
+    class="bg-light-blue-1 column items-center"
+    style="
+      width: 100%;
+      height: 100%;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      padding-top: 1rem;
+    "
+  >
+    <div class="row" style="max-width: 500px; height; 100%;">
+      <div class="col-6" style="padding: 0.5rem">
+        <!--Sumas-->
+        <div class="div-menu inset-shadow-down bg-blue-2" @click="sumas = true">
+          <div class="column items-center">
+            <q-img
+              basic
+              src="img/main_cards/suma.png"
+              style="width: 80%; height: 80%; margin-top: 1rem"
+            />
           </div>
         </div>
-      </q-scroll-area>
-    </q-img>
+        <!--Restas-->
+        <div
+          class="div-menu inset-shadow-down bg-blue-6"
+          @click="restas = true"
+        >
+          <div class="column items-center">
+            <q-img
+              basic
+              src="img/main_cards/menos.png"
+              style="width: 80%; height: 80%; margin-top: 1rem"
+            />
+          </div>
+        </div>
+        <!--Multiplicaciones-->
+        <div
+          class="div-menu inset-shadow-down bg-light-blue"
+          @click="multiplicaciones = true"
+        >
+          <div class="column items-center" style="overflow: scroll">
+            <q-img
+              basic
+              src="img/main_cards/multiplicacion.png"
+              style="width: 80%; height: 80%"
+            />
+          </div>
+        </div>
+        <!--Divisiones-->
+        <div
+          class="div-menu inset-shadow-down bg-cyan-13"
+          @click="divisiones = true"
+        >
+          <div class="column items-center">
+            <q-img
+              basic
+              src="img/main_cards/division.png"
+              style="width: 80%; height: 80%"
+            />
+          </div>
+        </div>
+        <!--Geometria-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-blue-14"
+          @click="geometria = true"
+        >
+          <div class="column items-center">
+            <h6>Figuras</h6>
+            <p>Geométricas</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" style="padding: 0.5rem">
+        <!--Sumas-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-cyan-13"
+          @click="p_sumas = true"
+        >
+          <div class="column items-center">
+            <h6>Practicar</h6>
+            <p>Sumas</p>
+          </div>
+        </div>
+        <!--Restas-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-light-blue"
+          @click="p_restas = true"
+        >
+          <div class="column items-center">
+            <h6>Practicar</h6>
+            <p>Restas</p>
+          </div>
+        </div>
+        <!--Multiplicaciones-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-blue-6"
+          @click="p_multiplicaciones = true"
+        >
+          <div class="column items-center">
+            <h6>Practicar</h6>
+            <p>Multiplicaciones</p>
+          </div>
+        </div>
+        <!--Divisiones-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-blue-14"
+          @click="p_divisiones = true"
+        >
+          <div class="column items-center">
+            <h6>Practicar</h6>
+            <p>Divisiones</p>
+          </div>
+        </div>
+        <!--Volumen-->
+        <div
+          class="div-menu_dos inset-shadow-down bg-blue-14"
+          @click="volumen = true"
+        >
+          <div class="column items-center">
+            <h6>Aprender</h6>
+            <p>Volumenes</p>
+          </div>
+        </div>
+      </div>
+      <!--Preguntas aleatorias-->
+      <div style="padding-left: 0.5rem; padding-right: 0.5rem; width: 100%">
+        <div
+          class="div-menu_dos inset-shadow-down bg-green-14"
+          @click="preguntas = true"
+        >
+          <div class="column items-center">
+            <h6>Preguntas</h6>
+            <p>aleatorias</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Aprender a sumar-->
     <q-dialog v-model="sumas" transition-show="rotate" transition-hide="rotate">
       <q-card style="background-color: #25252500; overflow: scroll">
@@ -388,7 +389,7 @@
     >
       <q-card style="background-color: #25252500; overflow: scroll">
         <q-card-section>
-         <Preguntas/>
+          <Preguntas />
         </q-card-section>
 
         <q-separator />
